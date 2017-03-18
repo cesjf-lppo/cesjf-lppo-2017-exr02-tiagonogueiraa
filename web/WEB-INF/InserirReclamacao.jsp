@@ -17,7 +17,7 @@
             <div>Nome: <input type="text" name="nome" size="30"></div><br>
             <div>Email: <input type="text" name="email" size="30"></div><br>
             <div>Descrição:<br> <textarea rows="10" cols="30" name="descricao"></textarea></div><br>
-            <div>Status: <select name="descricao" >
+            <div>Status: <select name="status" >
                     <option></option>
                     <option value="0">Aberto.</option>
                     <option value="1">Confirmado.</option>

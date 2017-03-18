@@ -15,7 +15,7 @@ public class Reclamacao {
     private String nome;
     private String email;
     private String descricao;
-    private String status;
+    private int status;
 
     public Reclamacao() {
     }
@@ -52,11 +52,11 @@ public class Reclamacao {
         this.descricao = descricao;
     }
 
-    public String getStatus() {
+    public int getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(int status) {
         this.status = status;
     }
     

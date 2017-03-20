@@ -6,7 +6,6 @@
 package br.cesjf.lppo;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -26,8 +25,8 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author aluno
  */
-@WebServlet(name = "ListaReclamacao", urlPatterns = {"/Lista.html"})
-public class ListaReclamacao extends HttpServlet {
+@WebServlet(name = "ListaReclamacaoServlet", urlPatterns = {"/lista.html"})
+public class ListaReclamacaoServlet extends HttpServlet {
 
     
 
@@ -43,19 +42,30 @@ public class ListaReclamacao extends HttpServlet {
             Connection conexao = DriverManager.getConnection("jdbc:derby://localhost:1527/lppo-2017-1", "usuario" , "senha");
             Statement operacao = conexao.createStatement();
             ResultSet resultado = operacao.executeQuery("SELECT * FROM reclamacao");
+            while(resultado.next()){
+                Reclamacao r = new Reclamacao();
+                r.setId(resultado.getLong("id"));
+                r.setNome(resultado.getString("nome"));
+                r.setEmail(resultado.getString("email"));
+                r.setDescricao(resultado.getString("descricao"));
+                r.setStatus(resultado.getInt("status"));
+              
+               
+                reclamacoes.add(r);
+                
+            }
+            
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(ListaReclamacao.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ListaReclamacaoServlet.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
-            Logger.getLogger(ListaReclamacao.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ListaReclamacaoServlet.class.getName()).log(Level.SEVERE, null, ex);
         }
       
+        request.setAttribute("reclamacao", reclamacoes);
+        request.getRequestDispatcher("WEB-INF/ListaReclamacao.jsp").forward(request, response);
     }
 
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-   
-    }
+        
 
     
 }

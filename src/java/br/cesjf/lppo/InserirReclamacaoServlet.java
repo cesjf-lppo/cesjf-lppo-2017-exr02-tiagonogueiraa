@@ -48,6 +48,7 @@ public class InserirReclamacaoServlet extends HttpServlet {
         //pegar os dados do formulário e inserir no banco
         
         Reclamacao reclamacao = new Reclamacao();
+     //   reclamacao.setId(Long.parseLong(request.getParameter("id")));
         reclamacao.setNome(request.getParameter("nome"));
         reclamacao.setEmail(request.getParameter("email"));
         reclamacao.setDescricao(request.getParameter("descricao"));

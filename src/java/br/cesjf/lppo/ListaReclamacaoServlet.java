@@ -50,8 +50,8 @@ public class ListaReclamacaoServlet extends HttpServlet {
                 r.setDescricao(resultado.getString("descricao"));
                 r.setStatus(resultado.getInt("status"));
               
-               
                 reclamacoes.add(r);
+                
                 
             }
             
@@ -61,7 +61,7 @@ public class ListaReclamacaoServlet extends HttpServlet {
             Logger.getLogger(ListaReclamacaoServlet.class.getName()).log(Level.SEVERE, null, ex);
         }
       
-        request.setAttribute("reclamacao", reclamacoes);
+        request.setAttribute("solicitacoes", reclamacoes);
         request.getRequestDispatcher("WEB-INF/ListaReclamacao.jsp").forward(request, response);
     }
 

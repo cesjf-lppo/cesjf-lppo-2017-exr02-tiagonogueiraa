@@ -24,7 +24,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author aluno
  */
-@WebServlet(name = "InserirReclamacaoServlet", urlPatterns = {"/Inserir.html"})
+@WebServlet(name = "InserirReclamacaoServlet", urlPatterns = {"/inserir.html"})
 public class InserirReclamacaoServlet extends HttpServlet {
 
    

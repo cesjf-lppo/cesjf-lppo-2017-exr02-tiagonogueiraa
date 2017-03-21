@@ -38,7 +38,7 @@ public class ListaReclamacaoServlet extends HttpServlet {
         
         try {
             //pegar dados do banco
-            Class.forName("org.apache.derby.ClientDriver");
+            Class.forName("org.apache.derby.jdbc.ClientDriver");
             Connection conexao = DriverManager.getConnection("jdbc:derby://localhost:1527/lppo-2017-1", "usuario" , "senha");
             Statement operacao = conexao.createStatement();
             ResultSet resultado = operacao.executeQuery("SELECT * FROM reclamacao");
@@ -49,7 +49,6 @@ public class ListaReclamacaoServlet extends HttpServlet {
                 r.setEmail(resultado.getString("email"));
                 r.setDescricao(resultado.getString("descricao"));
                 r.setStatus(resultado.getInt("status"));
-              
                 reclamacoes.add(r);
                 
                 

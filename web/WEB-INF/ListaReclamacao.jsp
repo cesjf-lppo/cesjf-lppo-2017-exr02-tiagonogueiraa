@@ -11,6 +11,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Reclamações</title>
+        <link href="estilo.css" rel="stylesheet"></link>
     </head>
     <body>
         <h1>Lista de Reclamação.</h1>
@@ -22,9 +23,9 @@
                 <th>Descricao</th>
                 <th>Status</th>
             </tr>
-             <c:forEach var="reclamacao" items="${solicitacoes}">
+            <c:forEach var="reclamacao" items="${solicitacoes}">
                 <tr>
-                    <td>${reclamacao.id}</td>
+                    <td><a href="edita.html?id=${reclamcao.id}">${reclamacao.id}</td> 
                     <td>${reclamacao.nome}</td>
                     <td>${reclamacao.email}</td>
                     <td>${reclamacao.descricao}</td>

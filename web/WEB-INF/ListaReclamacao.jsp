@@ -25,8 +25,8 @@
             </tr>
             <c:forEach var="reclamacao" items="${solicitacoes}">
                 <tr>
-                    <td><a href="edita.html?id=${reclamcao.id}">${reclamacao.id}</td> 
-                    <td>${reclamacao.nome}</td>
+                    <td><a href="editaReclamacao.html?id=${reclamacao.id}">${reclamacao.id}</td> 
+                    <td class="nome">${reclamacao.nome}</td>
                     <td>${reclamacao.email}</td>
                     <td>${reclamacao.descricao}</td>
                     <td>${reclamacao.status}</td>

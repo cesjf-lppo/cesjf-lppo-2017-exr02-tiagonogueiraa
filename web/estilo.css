@@ -7,3 +7,6 @@ and open the template in the editor.
     Created on : 20/03/2017, 21:50:54
     Author     : aluno
 */
+td.nome {
+    width: 200px;
+}

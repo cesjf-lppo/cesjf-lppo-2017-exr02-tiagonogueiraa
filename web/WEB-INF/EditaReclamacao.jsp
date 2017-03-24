@@ -1,9 +1,3 @@
-<%-- 
-    Document   : EditaReclamacao
-    Created on : 20/03/2017, 21:52:11
-    Author     : aluno
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -25,9 +19,11 @@
                     <option value="${reclamacao.status}">Recusado.</option>
                     <option value="${reclamacao.status}">Em execução.</option>
                     <option value="${reclamacao.status}">Resolvido.</option>
-                </select><br><br>
-                <input type="submit" value="Gravar"/>
-            </div>
+                </select><br><br></div>
+            <div><input type="submit" value="Gravar"/></div>
+           
+            
+            
             
         </form></p>
     </body>

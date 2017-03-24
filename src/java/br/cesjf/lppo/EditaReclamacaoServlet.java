@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package br.cesjf.lppo;
 
 import java.io.IOException;
@@ -24,7 +19,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author aluno
  */
-@WebServlet(name = "EditaReclamacaoServlet", urlPatterns = {"/editaReclamacao"})
+@WebServlet(name = "EditaReclamacaoServlet", urlPatterns = {"/editaReclamacao.html"})
 public class EditaReclamacaoServlet extends HttpServlet {
 
     @Override
@@ -72,12 +67,27 @@ public class EditaReclamacaoServlet extends HttpServlet {
             rec.setDescricao(request.getParameter("descricao"));
             rec.setStatus(Integer.parseInt(request.getParameter("status")));
             
-//                Contato contato = new Contato();
-//        contato.setId(Long.parseLong(request.getParameter("id")));
-//        contato.setNome(request.getParameter("nome"));
-//        contato.setSobrenome(request.getParameter("sobrenome"));
-//        contato.setTelefone(request.getParameter("telefone"));
-
+            try {
+                Class.forName("org.apache.derby.jdbc.ClientDriver");
+                Connection conexao = DriverManager.getConnection("jdbc:derby://localhost:1527/lppo-2017-1", "usuario" , "senha");
+                Statement operacao = conexao.createStatement();
+  
+                operacao.executeUpdate("UPDATE reclamacao SET nome='"
+                        + rec.getNome() + "',email='"
+                                + rec.getEmail()+ "',descricao='"
+                                        + rec.getDescricao()+ "',status='"
+                                                + rec.getStatus()+ "' WHERE id=" + rec.getId()
+                );                
+            } 
+            
+            catch (ClassNotFoundException ex) {
+            Logger.getLogger(EditaReclamacaoServlet.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(EditaReclamacaoServlet.class.getName()).log(Level.SEVERE, null, ex);
+        }
+            
+            response.sendRedirect("lista.html");
     }
+            
 
 }

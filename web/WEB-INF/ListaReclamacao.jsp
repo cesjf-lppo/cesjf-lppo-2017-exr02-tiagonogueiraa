@@ -4,12 +4,22 @@
 <html>
     <head>
         <meta charset="utf-8"/>
-        <title>Reclamações</title>
-        <link href="estilo.css" rel="stylesheet"/>
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Reclamações</title><!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"  />
+
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" />
+
+        <!-- Latest compiled and minified JavaScript -->
+	 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     </head>
-    <body>
+    <body class="container">
         <h1>Lista de Reclamação.</h1>
-        <table>
+	<div class="table-responsive">
+        <table class="table table-condesed">
             <tr>
                 <th>ID</th>
                 <th>Nome</th>
@@ -24,10 +34,10 @@
                     <td>${reclamacao.email}</td>
                     <td>${reclamacao.descricao}</td>
                     <td>${reclamacao.statusTexto}</td>
-                      <td><a href="ExluiReclamacao.html?id=${reclamacao.id}">X</a></td>
+                    <td><a href="ExluiReclamacao.html?id=${reclamacao.id}">X</a></td>
                 </tr>
             </c:forEach>
-        </table>
-        
+        </table></div>
+
     </body>
 </html>

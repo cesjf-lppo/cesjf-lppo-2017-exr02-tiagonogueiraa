@@ -10,7 +10,7 @@ package br.cesjf.lppo;
  * @author aluno
  */
 public class Reclamacao {
-    
+
     private Long id;
     private String nome;
     private String email;
@@ -27,8 +27,6 @@ public class Reclamacao {
     public void setId(Long id) {
         this.id = id;
     }
-      
-    
 
     public String getNome() {
         return nome;
@@ -58,12 +56,25 @@ public class Reclamacao {
         return status;
     }
 
+    public String getStatusTexto() {
+        switch (this.getStatus()) {
+            case 0:
+                return "Aberto";
+            case 1:
+                return "Aberto";
+            case 2:
+                return "Aberto";
+            case 3:
+                return "Aberto";
+            case 4:
+                return "Aberto";
+            default:
+                return "??";
+        }
+    }
+
     public void setStatus(int status) {
         this.status = status;
     }
 
-    
-    
-    
-    
 }

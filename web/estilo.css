@@ -7,6 +7,14 @@ and open the template in the editor.
     Created on : 20/03/2017, 21:50:54
     Author     : aluno
 */
-td.nome {
+td:nth-child(4) {
     width: 200px;
+    white-space: pre;
+    
+}
+tr{
+    background-color: lightgrey;    
+}
+tr:nth-child(even){
+    background-color: grey;    
 }

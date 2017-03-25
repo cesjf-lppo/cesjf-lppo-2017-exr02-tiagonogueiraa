@@ -1,14 +1,8 @@
-<%-- 
-    Document   : InserirReclamacao
-    Created on : 13/03/2017, 22:30:51
-    Author     : aluno
---%>
-
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta charset="UTF-8"/>
         <title>Reclamação</title>
     </head>
     <body>
@@ -18,7 +12,7 @@
             <div>Email: <input type="text" name="email" size="30"></div><br>
             <div>Descrição:<br> <textarea rows="10" cols="30" name="descricao"></textarea></div><br>
             <div>Status: <select name="status">
-                    <option></option>
+                   
                     <option value="0">Aberto.</option>
                     <option value="1">Confirmado.</option>
                     <option value="2">Recusado.</option>
@@ -28,6 +22,6 @@
                 <input type="submit" value="Gravar"/>
             </div>
             
-        </form></p>
+        </form>
     </body>
 </html>

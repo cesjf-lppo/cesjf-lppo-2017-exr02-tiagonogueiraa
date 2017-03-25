@@ -75,8 +75,8 @@ public class EditaReclamacaoServlet extends HttpServlet {
                 operacao.executeUpdate("UPDATE reclamacao SET nome='"
                         + rec.getNome() + "',email='"
                                 + rec.getEmail()+ "',descricao='"
-                                        + rec.getDescricao()+ "',status='"
-                                                + rec.getStatus()+ "' WHERE id=" + rec.getId()
+                                        + rec.getDescricao()+ "',status="
+                                                + rec.getStatus()+ " WHERE id=" + rec.getId()
                 );                
             } 
             
